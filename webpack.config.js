@@ -2,11 +2,14 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-	entry: './src/main.js',
+	entry: {
+		build: './src/main.js',
+		vendor: ['vue','axios']
+	},
 	output: {
 		path: path.resolve(__dirname, './src/dist'),
 		publicPath: '/src/dist/',
-		filename: 'build.js'
+		filename: '[name].js'
 	},
 	module: {
 		rules: [
@@ -45,6 +48,11 @@ module.exports = {
 	performance: {
 		hints: false
 	},
+	plugins: [
+		new webpack.optimize.CommonsChunkPlugin({
+			names:['vendor']
+		})
+	],
 	devtool: '#eval-source-map'
 }
 

@@ -11,6 +11,7 @@ const express 	= require('express'),
 	config 		= require(path.resolve(`./config/env/${process.env.NODE_ENV}`)),
 	http 		= require('http').Server(app);
 
+mongoose.Promise = global.Promise;
 mongoose.set('debug', config.db.DEBUG);
 mongoose.connect(config.db.URL, {autoReconnect: true});
 
