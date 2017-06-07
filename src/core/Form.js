@@ -1,4 +1,3 @@
-import axios from 'axios';
 import Errors from '../core/Errors';
 
 export default class Form {

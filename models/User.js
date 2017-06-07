@@ -6,14 +6,17 @@ config 			= require(path.resolve(`./config/env/${process.env.NODE_ENV}`)),
 Schema 			= mongoose.Schema,
 
 UserSchema 	= new Schema({
-	name: {
-		type: String,
-		required: true
+	username: {
+		type: String
 	},
-	description: {
-		type: String,
-		required: true
-	}
-});
+	email: {
+		type: String
+	},
+	status: [{
+		body: {
+			type: String
+		}	
+	}]
+},{timestamps: true});
 
 module.exports = mongoose.model('User', UserSchema);
