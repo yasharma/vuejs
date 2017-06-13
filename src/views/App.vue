@@ -25,7 +25,7 @@
 </template>
 
 <script>
-	import Form from '../core/Form';
+	
 	export default {
 		name: 'app',
 		data () {

@@ -15,6 +15,9 @@ UserSchema 	= new Schema({
 	status: [{
 		body: {
 			type: String
+		},
+		created: {
+			type: Date
 		}	
 	}]
 },{timestamps: true});

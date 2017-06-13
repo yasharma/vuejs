@@ -8,7 +8,9 @@ const 	express 	= require('express'),
 		router 		= express.Router();
 
 router.post('/projects', projectCtrl.projects);
-router.get('/statuses', userCtrl.statuses);
+router
+.get('/statuses', userCtrl.statuses)
+.post('/statuses', userCtrl.store);
 
 module.exports = {
 	router: router
